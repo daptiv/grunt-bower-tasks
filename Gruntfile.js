@@ -1,9 +1,7 @@
 module.exports = function (grunt) {
     'use strict';
 
-    // Project configuration.
     grunt.initConfig({
-        // Lint all non-generated javascript files
         jshint: {
             options: {
                 jshintrc: '.jshintrc'
