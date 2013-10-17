@@ -39,4 +39,6 @@ module.exports = function (grunt) {
 
     // Default task.
     grunt.registerTask('default', 'Run jshint', ['jshint', 'simplemocha:dev']);
+
+    grunt.registerTask('teamcity', 'Run jshint', ['jshint', 'simplemocha:teamcity']);
 };
