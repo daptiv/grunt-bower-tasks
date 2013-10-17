@@ -18,7 +18,7 @@
   "gitHead": "",
   "license": "MIT",
   "main": "Gruntfile.js",
-  "name": "ppmspa",
+  "name": "grunt-bower-tasks",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
