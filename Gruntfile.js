@@ -20,5 +20,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task.
-    grunt.registerTask('default', 'Build and run live tests and packaging', ['jshint']);
+    grunt.registerTask('default', 'Run jshint', ['jshint']);
 };
