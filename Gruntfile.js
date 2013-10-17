@@ -11,12 +11,32 @@ module.exports = function (grunt) {
                     'tasks/**/*.js'
                 ]
             }
+        },
+        simplemocha: {
+            options: {
+                timeout: 3000,
+                ignoreLeaks: false,
+                ui: 'bdd'
+            },
+            dev: {
+                src: ['tests/**/*.js'],
+                options: {
+                    reporter: 'spec'
+                }
+            },
+            teamcity: {
+                src: ['test/**/*.js'],
+                options: {
+                    reporter: 'teamcity'
+                }
+            }
         }
     });
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-simple-mocha');
 
     // Default task.
-    grunt.registerTask('default', 'Run jshint', ['jshint']);
+    grunt.registerTask('default', 'Run jshint', ['jshint', 'simplemocha:dev']);
 };

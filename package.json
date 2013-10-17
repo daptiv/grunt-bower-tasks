@@ -9,7 +9,8 @@
   "devDependencies": {
     "bower": "latest",
     "grunt": "latest",
-    "grunt-contrib-jshint": "~0.6.0"
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-simple-mocha": "~0.4.0"
   },
   "gitHead": "",
   "license": "MIT",
