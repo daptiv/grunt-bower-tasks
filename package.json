@@ -1,0 +1,24 @@
+{
+  "author": "Daptiv",
+  "bugs": {
+    "url": "https://github.com/daptiv/grunt-bower-tasks/issues"
+  },
+  "description": "Grunt bower wrapper with custom tasks",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "bower": "latest",
+    "grunt": "latest",
+    "grunt-contrib-jshint": "~0.6.0"
+  },
+  "gitHead": "",
+  "license": "MIT",
+  "main": "Gruntfile.js",
+  "name": "ppmspa",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/daptiv/grunt-bower-tasks.git"
+  },
+  "version": "0.0.1"
+}
