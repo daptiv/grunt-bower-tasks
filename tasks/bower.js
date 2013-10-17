@@ -1,4 +1,4 @@
-var BowerTask = require('bowerTask');
+var BowerTask = require('./lib/bowerTask');
 
 module.exports = function (grunt) {
     'use strict';
