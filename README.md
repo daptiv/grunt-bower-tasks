@@ -37,26 +37,30 @@ folder within the bower folder (options.source).
 
 Calls command within bower.
 
+<pre>
 install: {
     command: 'install'
 }
+</pre>
 
 is the same as:
 
-bower install
+<pre>bower install</pre>
     
 #### options.subCommand
 
 Allows for secondary command within bower.
 
+<pre>
 clean: {
     command: 'cache',
     subCommand: 'clean'
 }
+</pre>
 
-is translates to:
+translates to:
 
-bower cache clean
+<pre>bower cache clean</pre>
 
 #### options.source
 
@@ -75,8 +79,8 @@ grunt.initConfig({
         },
         copy: {
             command: 'copy',
-            source: <source>,
-            destination: <destination>
+            source: 'vendor/',
+            destination: 'build/'
         },
         clean: {
             command: 'cache',
