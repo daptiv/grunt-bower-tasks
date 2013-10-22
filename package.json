@@ -24,5 +24,8 @@
     "type": "git",
     "url": "git://github.com/daptiv/grunt-bower-tasks.git"
   },
+  "scripts": {
+    "test": "grunt simplemocha:all"
+  },
   "version": "0.0.1"
 }

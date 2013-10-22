@@ -18,16 +18,10 @@ module.exports = function (grunt) {
                 ignoreLeaks: false,
                 ui: 'bdd'
             },
-            dev: {
+            all: {
                 src: ['test/**/*.js'],
                 options: {
                     reporter: 'spec'
-                }
-            },
-            teamcity: {
-                src: ['test/**/*.js'],
-                options: {
-                    reporter: 'teamcity'
                 }
             }
         }
@@ -38,7 +32,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-simple-mocha');
 
     // Default task.
-    grunt.registerTask('default', 'Run jshint', ['jshint', 'simplemocha:dev']);
+    grunt.registerTask('default', 'Run jshint', ['jshint', 'simplemocha:all']);
 
     grunt.registerTask('teamcity', 'Run jshint', ['jshint', 'simplemocha:teamcity']);
 };
