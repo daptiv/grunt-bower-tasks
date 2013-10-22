@@ -32,7 +32,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-simple-mocha');
 
     // Default task.
-    grunt.registerTask('default', 'Run jshint', ['jshint', 'simplemocha:all']);
+    grunt.registerTask('default', 'Run jshint and all tests', ['jshint', 'simplemocha:all']);
 
     grunt.registerTask('teamcity', 'Run jshint', ['jshint', 'simplemocha:teamcity']);
 };
