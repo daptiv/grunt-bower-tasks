@@ -7,7 +7,8 @@
   "dependencies": {
     "bower": "latest",
     "grunt": "latest",
-    "underscore": "~1.5.1"
+    "underscore": "~1.5.1",
+    "grunt-cli": "~0.1.5"
   },
   "devDependencies": {
     "chai": "~1.7.2",
@@ -23,6 +24,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/daptiv/grunt-bower-tasks.git"
+  },
+  "scripts": {
+    "test": "grunt"
   },
   "version": "0.0.1"
 }
