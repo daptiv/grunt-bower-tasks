@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/daptiv/grunt-bower-tasks.png)](https://travis-ci.org/daptiv/grunt-bower-tasks)
 grunt-bower-tasks
 =================
 
