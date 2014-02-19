@@ -5,8 +5,8 @@
   },
   "description": "Grunt bower wrapper with custom tasks",
   "dependencies": {
-    "bower": "latest",
-    "grunt": "latest",
+    "bower": "~1.2.8",
+    "grunt": "~0.4.2",
     "underscore": "~1.5.1"
   },
   "devDependencies": {
