@@ -16,7 +16,7 @@
     "grunt-simple-mocha": "~0.4.0",
     "sinon": "~1.7.3"
   },
-  "scripts": { "test": "grunt" }
+  "scripts": { "test": "grunt" },
   "gitHead": "",
   "license": "MIT",
   "main": "Gruntfile.js",
