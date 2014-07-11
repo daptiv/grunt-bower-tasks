@@ -5,7 +5,7 @@
   },
   "description": "Grunt bower wrapper with custom tasks",
   "dependencies": {
-    "bower": "~1.2.8",
+    "bower": "~1.3.8",
     "grunt": "~0.4.2",
     "underscore": "~1.5.1"
   },
@@ -26,5 +26,5 @@
     "type": "git",
     "url": "git://github.com/daptiv/grunt-bower-tasks.git"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
