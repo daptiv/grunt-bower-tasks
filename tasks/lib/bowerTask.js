@@ -20,7 +20,7 @@ BowerTask.prototype = {
         switch (command)
         {
         case 'install':
-            this.install(this.gruntTask.data.options, INSTALL_RETRY_LIMIT);
+            this.install(undefined, this.gruntTask.data.options, INSTALL_RETRY_LIMIT);
             break;
         case 'copy':
             this.bowerCopy();
