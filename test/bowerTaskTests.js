@@ -53,7 +53,7 @@ describe('bowerTask', function () {
             };
             var stub = sinon.stub(this.bowerTask, 'install');
             this.bowerTask.run();
-            stub.calledWith('fakeOption', 10).should.be.true;
+            stub.calledWith(undefined, 'fakeOption', 10).should.be.true;
         });
 
         it('should run copy command', function () {
