@@ -91,10 +91,17 @@ BowerTask.prototype = {
     bowerVersionResponse: function(bowerModules) {
         this.grunt.log.writeln('Bower@' + this.bower.version);
         for (var depName in bowerModules.dependencies) {
-            var dep = bowerModules.dependencies[depName];
-            this.grunt.log.writeln('-> ' + depName + '@' + dep.pkgMeta.version);
+            this.printVersionTree(bowerModules.dependencies[depName], 0);
         }
         this.bowerDone();
+    },
+
+    printVersionTree: function(pkg, depth) {
+        this.grunt.log.writeln('-> ' + pkg.pkgMeta.name + '@' + pkg.pkgMeta.version);
+        for (var dep in pkg.dependencies) {
+            this.grunt.log.write(new Array(depth + 2).join('  '));
+            this.printVersionTree(pkg.dependencies[dep], depth + 1);
+        }
     },
 
     install: function (options, retryLimit) {
