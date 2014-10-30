@@ -51,7 +51,7 @@ BowerTask.prototype = {
             .on('error', this.bowerError.bind(this));
     },
 
-    bowerVersion: function()  {
+    bowerVersion: function () {
         this.bower.commands.list({ paths: false }, { offline: true })
             .on('end', this.bowerVersionResponse.bind(this))
             .on('error', this.bowerError.bind(this));
@@ -88,7 +88,7 @@ BowerTask.prototype = {
         return this.grunt.file.readJSON('bower.json');
     },
 
-    bowerVersionResponse: function(bowerModules) {
+    bowerVersionResponse: function (bowerModules) {
         this.grunt.log.writeln('Bower@' + this.bower.version);
         for (var depName in bowerModules.dependencies) {
             this.printVersionTree(bowerModules.dependencies[depName], 0);
@@ -96,7 +96,7 @@ BowerTask.prototype = {
         this.bowerDone();
     },
 
-    printVersionTree: function(pkg, depth) {
+    printVersionTree: function (pkg, depth) {
         this.grunt.log.writeln('-> ' + pkg.pkgMeta.name + '@' + pkg.pkgMeta.version);
         for (var dep in pkg.dependencies) {
             this.grunt.log.write(new Array(depth + 2).join('  '));
