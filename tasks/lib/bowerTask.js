@@ -89,10 +89,12 @@ BowerTask.prototype = {
     },
 
     bowerVersionResponse: function(bowerModules) {
-        grunt.log.writeln('Bower@' + this.bower.version);
-        bowerModules.forEach(function(dep) {
-            grunt.log.writeln('-> ' + dep.pkgMeta.name + '@' + dep.pkgMeta.version);
-        });
+        this.grunt.log.writeln('Bower@' + this.bower.version);
+        for (var depName in bowerModules.dependencies) {
+            var dep = bowerModules.dependencies[depName];
+            this.grunt.log.writeln('-> ' + depName + '@' + dep.pkgMeta.version);
+        }
+        this.bowerDone();
     },
 
     install: function (options, retryLimit) {
