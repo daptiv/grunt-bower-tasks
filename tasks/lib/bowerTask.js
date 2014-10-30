@@ -25,6 +25,9 @@ BowerTask.prototype = {
         case 'copy':
             this.bowerCopy();
             break;
+        case 'version':
+            this.bowerVersion();
+            break;
         default:
             this.runCommand(command, subCommand);
             break;
@@ -43,8 +46,14 @@ BowerTask.prototype = {
     },
 
     bowerCopy: function () {
-        this.bower.commands.list({ paths: true })
+        this.bower.commands.list({ paths: true }, { offline: true })
             .on('end', this.bowerListResponse.bind(this))
+            .on('error', this.bowerError.bind(this));
+    },
+
+    bowerVersion: function()  {
+        this.bower.commands.list({ paths: false }, { offline: true })
+            .on('end', this.bowerVersionResponse.bind(this))
             .on('error', this.bowerError.bind(this));
     },
 
@@ -63,13 +72,11 @@ BowerTask.prototype = {
     },
 
     bowerListResponse:  function (bowerModules) {
-        this.grunt.log.ok('before');
         var bowerCopy = new BowerCopy(this.getBowerJson(), {
                 destination: this.gruntTask.data.destination,
                 source: this.gruntTask.data.source
             }),
             filesToCopy = bowerCopy.processPaths(bowerModules);
-        this.grunt.log.ok('after');
         this.grunt.config(['copy', 'bower'], {
             files: filesToCopy
         });
@@ -79,6 +86,13 @@ BowerTask.prototype = {
 
     getBowerJson: function () {
         return this.grunt.file.readJSON('bower.json');
+    },
+
+    bowerVersionResponse: function(bowerModules) {
+        grunt.log.writeln('Bower@' + this.bower.version);
+        bowerModules.forEach(function(dep) {
+            grunt.log.writeln('-> ' + dep.pkgMeta.name + '@' + dep.pkgMeta.version);
+        });
     },
 
     install: function (options, retryLimit) {
